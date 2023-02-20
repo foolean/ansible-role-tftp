@@ -3,9 +3,10 @@
 # SPDX short identifier: BSD-3-Clause
 ---
 
-- name: Ensure TFTP Server is not installed (CIS)
+- name: Ensure TFTP Server and client are not installed (CIS)
   become: true
   ansible.builtin.package:
     name:
+      - 'tftp'
       - 'tftp-server'
     state: absent
